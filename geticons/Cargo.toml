@@ -1,0 +1,26 @@
+[package]
+name = "geticons"
+version = "1.2.2"
+authors = ["Sashanoraa <sasha@noraa.gay>"]
+edition = "2018"
+description = "CLI tool to get icons on Linux and other Freedesktop systems"
+license = "GPL-3.0-or-later"
+documentation = "https://docs.rs/geticons/"
+repository = "https://git.sr.ht/~zethra/geticons"
+categories = ["command-line-utilities"]
+keywords = ["cli", "freedesktop", "icons", "linux", "utility"]
+
+[dependencies]
+linicon = { version = "2.3" }
+argh = { version = "0.1", default-features = false }
+prettytable-rs = { version = "0.10", default-features = false, features = ["csv"] }
+
+[profile.release]
+lto = true  # Enable link-time optimization
+codegen-units = 1  # Reduce the number of codegen units to increase optimization
+debug = false  # Disable debug symbols
+panic = "abort"  # Reduce binary size by using abort on panic
+strip = true  # Strip symbols from the binary
+
+[features]
+default = []
