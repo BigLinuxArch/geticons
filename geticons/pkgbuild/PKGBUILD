@@ -7,7 +7,7 @@ license=('GPL')
 arch=('x86_64')
 url="https://github.com/biglinux/$pkgname"
 provides=("$pkgname")
-source=("git+${url}.git")
+source=("git+${url}.git#branch=stable-2024-10-05_19-43")
 md5sums=('SKIP')
 if [ -e "${pkgname}.install" ];then
     install=${pkgname}.install
